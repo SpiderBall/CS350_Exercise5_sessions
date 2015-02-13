@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+        <!-- insert the page content here -->
+        <h1>Register</h1>
+        <form method="post" action="/register">
+  <h2> <font color="red">{% if username_in_use:%} This username is already in use, please try again. {%endif%} </font></h2>
+  <h2> <font color="red">{% if incomplete_form:%} All elements of the form must be completed to continue. Please try again. {%endif%} </font></h2>
+    <p>
+    <label for="username">Pick a unique username:</label>
+	<input type="text" id="username" name="username" size="40"> </p>
+    <p>
+    <label for="password">Pick a password that you'll remember:</label>
+    <input type="password" id="password" name="pw" size="40" /></p>
+
+    <p>
+    <label for="zipcode">Please enter your zipcode:</label>
+    <input type="zipcode" id="zipcode" name="zipcode" size="5" /></p>
+
+    <p><input type="submit" value="register" name="submit" /></p>
+  </form>
+        
+        
+ 
+        
+{% endblock %}
